@@ -1,0 +1,1604 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  margin: 0;
+  color: #616368;
+}
+
+.section {
+  position: relative;
+}
+
+.section:target {
+  padding-top: 90px;
+}
+
+.section_home {
+  position: relative;
+}
+
+.section_home:target {
+  padding-top: 0;
+}
+/* PREPRAVKA */
+/* .dummy {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  top: -65px;
+  left: 0;
+  visibility: hidden;
+} */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fixed_nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+}
+/* PREPRAVKA */
+/* .fixed_mob {
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #ffffff;
+} */
+
+.spacing {
+  padding: 45px;
+}
+
+.header .container {
+  min-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.toggle-btn {
+  display: none;
+}
+
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+
+.visiable {
+  display: none;
+}
+
+/* vise backrounda imaju stack order prvi ima najveci prioritet */
+.block__1 {
+  background: url(../Images/bg1_bestapp.png) no-repeat,
+    url(../Images/bg2_bestapp.png) no-repeat,
+    url(../Images/bg_bestapp.png) repeat-x;
+  /* background-position: 50% 100%;->center bottom */
+  background-position: 29% 20%, 58% 100%, center bottom;
+  /* margin-top: 155px; */
+}
+
+.block__1 .container .bestapp {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  /* za mobile verziju */
+  /* padding-left: 0; */
+}
+
+.nav ul a {
+  padding: 0 34px;
+  color: #55606e;
+  font-weight: bold;
+}
+
+.btn__free {
+  width: 170px;
+  height: 57px;
+  border: solid transparent;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  background-color: #2500f9;
+}
+
+.bestapp__left {
+  margin-top: 250px;
+  width: 550px;
+  color: #242f51;
+}
+
+.bestapp__left p img {
+  margin-right: 10px;
+}
+
+.editors__choice {
+  background-color: #e2eaed;
+  height: 35px;
+  border: 1px transparent;
+  border-radius: 50px;
+  display: inline-flex;
+  width: 365px;
+  align-items: center;
+  font-size: 18px;
+  margin: 0;
+}
+
+.bestapp_h2 {
+  font-size: 60px;
+  margin: 0;
+}
+
+.demo {
+  display: flex;
+  align-items: center;
+}
+
+.demo a {
+  color: #2500f9;
+  margin-left: 25px;
+}
+
+.bestapp__right {
+  width: 470px;
+  margin: 20px 0 0 0;
+  padding-left: 120px;
+}
+
+.companies {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows:
+    [hd-start] minmax(18.75rem, auto) [hd-end row-2-start] minmax(
+      1rem,
+      62.5rem
+    )
+    [row-2-end];
+
+  grid-template-areas:
+    'main main'
+    'left right';
+}
+
+.companies__main {
+  grid-area: 'main';
+  grid-column: span 2;
+  text-align: center;
+  color: #242f51;
+  margin-top: 70px;
+}
+
+.companies__main-logo {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.companies__main-logo li {
+  margin-right: 30px; /*morao sam da smanjiim zbog slick slajdera*/
+}
+/* SLICK SLAJDER */
+/* centriranje slajdera */
+
+/* kada zelimo da iskljucimo sve strelice */
+/* .slick-prev:before,
+.slick-next:before {
+   display:none;
+} */
+
+.slider div {
+  text-align: center;
+}
+
+/* centriranje slajdera */
+.slider img {
+  margin: 0 auto;
+}
+
+.slick-arrow::before {
+  color: #242f51 !important;
+  background-color: transparent;
+  font-size: 50px !important;
+}
+
+.slick-next {
+  width: 80px !important;
+  margin-right: 10px;
+}
+
+.slick-prev {
+  margin-left: 23px;
+  z-index: 1;
+}
+
+.companies__left {
+  grid-area: 'left';
+  align-items: center;
+  background: url(../Images/co-bg1.png) no-repeat,
+    url(../Images/co-bg5.png) no-repeat, url(../Images/co-bg3.png) no-repeat,
+    url(../Images/co-bg4.png) no-repeat, url(../Images/co-bg2.png) no-repeat;
+  background-position: 70% 50%, 70% 88%, 10% 80%, 50% 65%, 50% 50%;
+}
+
+.companies__right {
+  grid-area: 'right';
+  margin-left: 40px;
+}
+
+.h3__styling {
+  font-size: 36px;
+  color: #242f51;
+}
+
+.companies__right_features {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.icons {
+  width: 88px;
+  height: 88px;
+  border: solid 1px transparent;
+  border-radius: 50%;
+}
+
+.h5__styling {
+  font-size: 20px;
+  color: #f55767;
+  margin: 0;
+}
+
+.h5__styling__blue {
+  color: #2563ff;
+}
+
+.h5__styling__green {
+  color: #40975f;
+}
+
+.icons__1 {
+  background: #ffecef url(../Images/co-icon1.png) no-repeat;
+  background-position: center center;
+  margin-right: 35px;
+}
+
+.icons__2 {
+  background: #f4f4ff url(../Images/co-icon2.png) no-repeat;
+  background-position: center center;
+  margin-right: 35px;
+}
+
+.icons__3 {
+  background: #e4ffee url(../Images/co-icon3.png) no-repeat;
+  background-position: center center;
+  margin-right: 35px;
+}
+.icons__4 {
+  background: #ffecef url(../Images/jk-icon1.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+.icons__5 {
+  background: #f4f4ff url(../Images/jk-icon2.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+.icons__6 {
+  background: #e4ffee url(../Images/jk-icon3.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.icons__7 {
+  background: #ffecef url(../Images/ourApp-icon1.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.icons__8 {
+  background: #eaf9ff url(../Images/ourApp-icon2.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.icons__9 {
+  background: #fff6d3 url(../Images/ourApp-icon3.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.icons__10 {
+  background: #e4ffee url(../Images/ourApp-icon4.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.icons__11 {
+  background: #f4f4ff url(../Images/ourApp-icon5.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.icons__12 {
+  background: #fdeee4 url(../Images/ourApp-icon6.png) no-repeat;
+  background-position: center center;
+  margin-bottom: 30px;
+}
+
+.block__3 {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.jackpot {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.jackpot h3 {
+  padding-right: 75px;
+  border-right: 1px solid #b9b9b8;
+}
+
+.jackpot p {
+  margin-left: 50px;
+}
+
+.jackpot__features {
+  display: flex;
+  justify-content: center;
+}
+
+.jackpot__feature1 {
+  margin-left: 50px;
+  margin-right: 100px;
+}
+
+.jackpot__feature2 {
+  margin-right: 100px;
+}
+
+.jackpot__code_intergration {
+  margin-left: -150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.jackpot__bg {
+  position: relative;
+  min-width: 653px;
+  height: 673px;
+  background: url(../Images/jk-bg.png) no-repeat;
+  background-position: center center;
+}
+
+.jackpot__bg .img1 {
+  position: absolute;
+  top: 188px;
+  left: 64px;
+}
+
+.jackpot__bg .img2 {
+  position: absolute;
+  top: 100px;
+  left: 157px;
+}
+
+.jackpot__bg .img3 {
+  position: absolute;
+  top: 147px;
+  left: 270px;
+}
+
+.jackpot__bg .img4 {
+  position: absolute;
+  top: 92px;
+  left: 368px;
+}
+
+.jackpot__bg .img5 {
+  position: absolute;
+  top: 275px;
+  left: 383px;
+}
+
+.jackpot__bg .img6 {
+  position: absolute;
+  top: 242px;
+  left: 493px;
+}
+
+.btn__mt {
+  margin-top: 25px;
+}
+
+.jackpot__code_intergration__left {
+  margin-left: 90px;
+}
+
+.ourApp {
+  display: grid;
+  grid-template-columns: [hd-start] repeat(3, [col-start] 33.33% [col-end]) [hd-end];
+  grid-template-rows:
+    [hd-start] minmax(18.75rem, 23rem) [hd-end row-2-start] minmax(
+      18.75rem,
+      auto
+    )
+    [row-2-end row-3-start] minmax(18.75rem, auto) [row-2-end];
+
+  grid-template-areas:
+    'header header header'
+    'main main main'
+    'main2 main2 main2';
+}
+
+.ourApp__header {
+  grid-area: header;
+  grid-column: span 3;
+  text-align: center;
+  margin: 70px 0;
+}
+
+.ourApp__main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-area: main;
+  text-align: center;
+}
+.ourApp__main2 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-area: main2;
+  text-align: center;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.blue {
+  color: #242f51;
+}
+
+.ultimate__features {
+  display: grid;
+  grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+  grid-template-rows:
+    [hd-start] minmax(15.625rem, auto) [hd-end row-2-start] minmax(
+      37.5rem,
+      auto
+    )
+    [row-2-end row-3-start] 10rem [row-2-end];
+
+  grid-template-areas:
+    'header header side side'
+    'main main side side'
+    'main2 main2 side side';
+}
+
+.ultimate__featur__header {
+  grid-area: header;
+  margin-left: 10px;
+}
+
+.mb__0 {
+  margin-bottom: 0;
+}
+
+.ultimate__feature__main {
+  grid-area: main;
+  margin-left: 10px;
+}
+
+.first__row {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.ultimate__feature1 {
+  margin-right: 78px;
+}
+
+.bg_color {
+  background-color: #e4ffee;
+}
+
+.bg__color1 {
+  background-color: #f4f4ff;
+}
+
+.ultimate__feature__main2 {
+  grid-area: main2;
+  margin-left: 10px;
+}
+
+.ultimate__feature__side {
+  width: 700px;
+  grid-area: side;
+  background: url(../Images/ultimate__features-bg1.png) no-repeat,
+    url(../Images/ultimate__features-bg2.png) no-repeat,
+    url(../Images/ultimate__features-bg3.png) no-repeat;
+  background-position: 85% 60%, 0% 50%, 50px 40%;
+}
+
+.block__6 {
+  padding-bottom: 100px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.awesomeFeatures {
+  text-align: center;
+}
+
+.awesomeFeatures__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0 40px;
+}
+
+.monthly {
+  position: relative;
+  width: 133px;
+  height: 51px;
+  left: 138px;
+  top: 3px;
+  margin-left: -138px;
+}
+
+.annualy {
+  width: 281px;
+  border: solid 1px #ebebeb;
+  background-color: #ffffff;
+  color: #999ca5;
+  text-align: end;
+  font-weight: normal;
+  padding-right: 25px;
+}
+
+.awesomeFeatures_cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.awesomeFeatures_card {
+  width: 317px;
+  margin: 0 20px;
+  box-sizing: unset;
+  text-align: center;
+  border: transparent;
+  border-radius: 10px;
+  box-shadow: 1px 20px 27px 2px #edf1f3;
+}
+
+.card1 {
+  box-shadow: none;
+  border: 2px solid #ebebeb;
+}
+
+.awesomeFeatures_card p:first-of-type {
+  line-height: 45px;
+}
+
+.awesomeFeatures__h2 {
+  color: #242f51;
+  padding-top: 60px;
+}
+
+.heading {
+  background-color: #f4f7f9;
+  background-image: linear-gradient(to top, #f4f7f9, #fefeff);
+  padding-bottom: 20px;
+  box-shadow: none;
+  margin: 0;
+}
+
+.heading p:first-of-type {
+  color: #242f51;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.heading p:nth-child(3) {
+  margin-top: 0;
+}
+
+.heading1 {
+  background-image: none;
+}
+
+.awesomeFeatures_span {
+  font-size: 18px;
+  color: #999ca5;
+  font-weight: normal;
+}
+
+.awesomeFeatures__btn {
+  width: 210px;
+  height: 51px;
+  margin-bottom: 25px;
+}
+
+.trial {
+  margin-bottom: 30px;
+}
+
+.trial a {
+  text-align: center;
+  color: #2500f9;
+}
+
+.clientSatisfaction {
+  display: flex;
+  flex-direction: row;
+}
+
+.clientSatisfaction__bg {
+  width: 823px;
+  height: 502px;
+  background: url(../Images/satisfaction-bg.png) no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 250px;
+  margin-left: -200px;
+  margin-right: -55px;
+}
+
+.clientSatisfaction_img {
+  position: absolute;
+  left: 255px;
+  top: -15px;
+  width: 70.75px;
+  height: 69.81px;
+  border: solid 1px transparent;
+  border-radius: 50%;
+  object-fit: none;
+  /* object-position: 48% -5px; */
+  object-position: 48% 10%;
+}
+.clientSatisfaction__bg .img_01 {
+  left: 40px;
+  top: 90px;
+  width: 59.5px;
+  height: 59.28px;
+  object-position: 51% 30%;
+}
+.clientSatisfaction__bg .img_02 {
+  left: 65px;
+  top: 227px;
+  width: 103.34px;
+  height: 101.34px;
+  object-position: 75% 15%;
+}
+.clientSatisfaction__bg .img_03 {
+  left: 289px;
+  top: 177px;
+  width: 103.34px;
+  height: 103.28px;
+  object-position: 45% 22%;
+}
+.clientSatisfaction__bg .img_04 {
+  left: 234px;
+  top: 372px;
+  width: 131.41px;
+  height: 129.94px;
+  object-position: 65% 8%;
+}
+.clientSatisfaction__bg .img_05 {
+  left: 482px;
+  top: 260px;
+  width: 84.25px;
+  height: 82.59px;
+  object-position: 47% 50%;
+}
+.clientSatisfaction__bg .img_06 {
+  left: 613px;
+  top: 34px;
+  width: 57.28px;
+  height: 56.31px;
+  object-position: 70% 5%;
+}
+
+.clientSatisfaction_right {
+  position: relative;
+  margin: 124px 0 100px 35px;
+}
+
+.clientSatisfaction_right .mb__20 {
+  margin-bottom: 20px;
+}
+
+.stars {
+  margin: 15px 0 15px;
+}
+
+.clientSatisfaction_right__ceo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.slider2 {
+  width: 545.56px;
+}
+
+.imgslider {
+  display: flex !important;
+  align-items: center;
+}
+
+.zlotan {
+  width: 90px;
+  height: 90px;
+  border: solid 1px transparent;
+  border-radius: 50%;
+  object-fit: none;
+  object-position: 50% 25%;
+  margin-right: 30px;
+}
+
+.fs_18 {
+  font-size: 18px;
+}
+
+.ceo_name {
+  font-size: 18px;
+}
+
+.ceo_paragraph {
+  margin: 0;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.arrows {
+  position: absolute;
+  display: flex;
+  right: 0;
+  margin-right: -30px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: solid 1px #dee1e6;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.separator {
+  width: 1px;
+  height: 30px;
+  background-color: #e7e7e7;
+  margin: auto 0;
+}
+/* nije nam potrebno jer je je isto kao u arrow */
+/* .arrow_right {
+  border: solid 1px #dee1e6;
+  background-color: #ffffff;
+} */
+
+.arrow_left:after {
+  content: '\27F5';
+  font-family: 'Arial Unicode MS', 'Consolas';
+  color: #e7e7e7;
+  font-size: 30px;
+}
+
+.arrow_right:after {
+  content: '\27F6';
+  color: #e7e7e7;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.arrow_left:hover:after {
+  color: #2500f9;
+}
+
+.arrow_right:hover:after {
+  color: #2500f9;
+}
+
+.arrow_left:hover {
+  border: solid 1px transparent;
+  background-color: #eff3f8;
+}
+
+.arrow_right:hover {
+  border: solid 1px transparent;
+  background-color: #eff3f8;
+}
+
+.block__8 {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.FAQ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 115px;
+}
+
+.FAQ .mb_49 {
+  margin-bottom: 49px;
+}
+
+.FAQ .mb__24 {
+  margin-bottom: 24px;
+}
+
+.FAQ_block {
+  margin: auto;
+  text-align: start;
+  margin-top: 10px;
+}
+
+.first_block {
+  width: 950px;
+  padding: 50px 100px 70px 50px;
+  background-color: #f5f7fa;
+}
+
+/* morao sam ovaj font jer se myriad_pro naplacuje */
+.myriad_pro__font {
+  font-family: 'PT Sans', sans-serif;
+  line-height: 25px;
+  margin-right: -50px;
+}
+
+.second_block {
+  width: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 30px 20px 50px;
+  background-color: #f5f7fa;
+}
+
+.active,
+.accordion:hover {
+  background-color: #cad4ff;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+.accordion:after {
+  content: '\002B';
+  display: flex;
+  align-items: center;
+  color: #242f51;
+  font-weight: bold;
+  max-height: 30px;
+  font-size: 35px;
+  float: right;
+}
+
+.active:after {
+  content: '\2212';
+}
+
+.panel {
+  width: 950px;
+  text-align: justify;
+  font-family: 'PT Sans', sans-serif;
+  line-height: 25px;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.downloadApp {
+  display: flex;
+  height: 426px;
+}
+
+.fs_48 {
+  font-size: 48px;
+  margin: 90px 0 29px;
+}
+
+.downloadApp__left {
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
+.downloadApp__left .apps {
+  margin: 34px 0 105px 5px;
+}
+
+.gPlay {
+  margin-right: 30px;
+}
+
+.downloadApp__right {
+  width: 844px;
+  height: 472px;
+  background: url(../Images/downloadApp_bg.png) no-repeat;
+  background-size: cover;
+  margin-right: -110px;
+  margin-left: -50px;
+  margin-top: 12px;
+}
+
+.footer {
+  background-color: #09142e;
+}
+
+.footer_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer_content .mt_115 {
+  margin-top: 105px;
+}
+
+.footer_ul {
+  display: flex;
+  margin: 50px 0;
+}
+.footer_ul ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+}
+
+.footer_ul ul a {
+  padding: 0 17.5px;
+  color: #ffffff;
+}
+
+.fotter_logos a {
+  margin: auto 10px;
+  color: #273043;
+}
+
+.fotter_logos a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  font-size: 14px;
+  margin: 90px 0 120px;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+@media (max-width: 1450px) {
+  .downloadApp__right {
+    width: 744px;
+    height: 472px;
+    background-size: 744px 422px;
+    margin: 52px -60px -150px -60px;
+  }
+
+  .downloadApp__left {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    margin-right: 200px;
+  }
+
+  .nav ul a {
+    padding: 0 15px;
+  }
+
+  .bestapp__right {
+    width: auto;
+  }
+
+  .bestapp__left {
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .jackpot__bg {
+    width: 300px;
+    height: 350px;
+    background-size: contain;
+    margin-left: -150px;
+    margin-right: -100px;
+  }
+
+  .jackpot__code_intergration {
+    margin-left: 0px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .jackpot__code_intergration__left {
+    margin-left: 0;
+  }
+
+  .jackpot__code_intergration__left h3 {
+    font-size: 24px;
+  }
+
+  .jackpot__bg .img1 {
+    width: 60px;
+    top: 75px;
+    left: 150px;
+  }
+
+  .jackpot__bg .img2 {
+    width: 50px;
+    top: 20px;
+    left: 215px;
+  }
+
+  .jackpot__bg .img3 {
+    width: 40px;
+    top: 52px;
+    left: 287px;
+  }
+
+  .jackpot__bg .img4 {
+    width: 40px;
+    top: 17px;
+    left: 352px;
+  }
+
+  .jackpot__bg .img5 {
+    width: 37px;
+    top: 134px;
+    left: 362px;
+  }
+
+  .jackpot__bg .img6 {
+    width: 40px;
+    top: 113px;
+    left: 434px;
+  }
+
+  .ultimate__feature__side {
+    background: url(../Images/ultimate__features-bg1.png) no-repeat,
+      url(../Images/ultimate__features-bg2.png) no-repeat;
+    background-size: 370px 570px, 350px 520px;
+    background-position: 150px 60%, 0 50%;
+  }
+
+  .ultimate__feature1 {
+    margin-right: 15px;
+  }
+
+  .ultimate__feature p {
+    width: 230px;
+  }
+
+  .ultimate__feature1 p {
+    width: 230px;
+  }
+
+  .clientSatisfaction {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .clientSatisfaction__bg {
+    width: 823px;
+    height: 502px;
+    margin: 100px 0 100px 0;
+  }
+
+  .downloadApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .downloadApp__right {
+    margin: 0 0 -72px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .nav {
+    margin-right: auto;
+  }
+
+  .bestapp_h2 {
+    font-size: 40px;
+  }
+
+  .bestapp__right {
+    padding-left: 20px;
+  }
+
+  .bestapp__right img {
+    width: 305px;
+  }
+
+  .companies__main-logo {
+    flex-wrap: wrap;
+  }
+
+  .companies__left {
+    background: url(../Images/co-bg1.png) no-repeat;
+    background-size: contain;
+    background-position: 70% 50%;
+  }
+
+  .jackpot__features {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .jackpot__feature1 {
+    margin-right: 75px;
+  }
+
+  .icons {
+    margin: 0 auto 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .FAQ_block .first_block {
+    width: 700px;
+  }
+
+  .FAQ_block .second_block {
+    width: 700px;
+  }
+
+  .accordion {
+    display: flex;
+    align-items: center;
+  }
+
+  .panel {
+    width: 700px;
+  }
+
+  .backdrop {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /*kada zelimo da animiramo backdrop moramo da dodamo display block unutar js prilikom klika na chose plan, jer 
+    animacija nece da radi kada je display none, inace on mora da se postavi u backdrop jer ako stavimo opaciti 0
+    backdrop ce biti deo DOM samo nece biti vidljiv*/
+    opacity: 0;
+    /*kako bi backdrop prilikom zatvaranja modala imao animaciju moramo da unesemo isto vreme 0.2s i u js kod prilikom
+    u funkciji za zatvaranje modala (closeModal())*/
+    transition: opacity 0.2s;
+  }
+
+  .visiable {
+    /*za main nav ne moramo da postavimo opaciti jer zelimo da animacija ide desno levo*/
+    transform: translateX(100%);
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    right: 0;
+    background: white;
+    width: 80%;
+    height: 100vh;
+    transition: transform 0.2s ease-out;
+  }
+
+  .nav-mobile {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto; /*uklonili smo top i bottom marginu zbog flex*/
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .nav-mobile ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-mobile ul li {
+    margin: 1rem 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  .nav-mobile ul a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #616368;
+    font-weight: bold;
+    padding: 0.2rem 0;
+  }
+
+  /*kada smo postavili translateY(0) ne moramo da postavimo transalteX jer smo sa Y resetovali oba*/
+  .open {
+    display: flex !important; /*ostaje kako bi radio backdrop*/
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@media (max-width: 914px) {
+  .toggle-btn {
+    display: flex;
+    margin-right: 30px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .header .container {
+    min-width: 100%;
+  }
+
+  .companies__right {
+    margin-left: 0;
+  }
+
+  .companies__right_features .icons__1 {
+    margin-right: 20px;
+  }
+
+  .companies__right_features .icons__2 {
+    margin-right: 20px;
+  }
+
+  .companies__right_features .icons__3 {
+    margin-right: 20px;
+  }
+
+  .jackpot h3 {
+    font-size: 24px;
+  }
+
+  .ultimate__feature__side {
+    background: none;
+  }
+
+  .ultimate__features {
+    grid-template-areas:
+      'header header header header'
+      'main main main main'
+      'main2 main2 main2 main2';
+  }
+
+  .ultimate__featur__header {
+    text-align: center;
+  }
+
+  .ultimate__feature__main .first__row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ultimate__feature__main2 {
+    margin: 0 auto;
+  }
+
+  .ultimate__feature p {
+    width: auto;
+  }
+
+  .ultimate__feature1 p {
+    width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .block__1 {
+    background: url(../Images/bg_bestapp.png) repeat-x;
+    background-position: center bottom;
+  }
+
+  .bestapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bestapp__left {
+    margin-top: 50px;
+  }
+
+  .bestapp__left p {
+    width: 450px;
+  }
+
+  .demo {
+    justify-content: center;
+  }
+
+  /* .bestapp_h2 {
+    width: 450px;
+  } */
+
+  .companies__left {
+    display: none;
+  }
+
+  .companies__right {
+    grid-column: span 2;
+  }
+
+  .companies__right_features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .companies__right {
+    margin-left: 40px;
+  }
+
+  .companies__right_features .icons__1 {
+    margin: 0 45px;
+  }
+
+  .companies__right_features .icons__2 {
+    margin: 0 45px;
+  }
+
+  .companies__right_features .icons__3 {
+    margin: 0 45px;
+  }
+
+  .jackpot {
+    flex-direction: column;
+  }
+
+  .jackpot h3 {
+    font-size: 36px;
+    border-right: none;
+    border-bottom: 1px solid #b9b9b8;
+    padding-right: 0;
+    padding-bottom: 50px;
+  }
+
+  .jackpot p {
+    margin-left: 0;
+  }
+
+  .jackpot__features {
+    flex-direction: column;
+  }
+
+  .jackpot__feature1 {
+    margin: auto;
+  }
+
+  .jackpot__feature2 {
+    margin: auto;
+  }
+
+  .jackpot__code_intergration {
+    flex-direction: column-reverse;
+  }
+
+  .jackpot__code_intergration__left {
+    margin-bottom: 50px;
+  }
+
+  .awesomeFeatures_cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .awesomeFeatures_card {
+    margin-bottom: 50px;
+  }
+
+  .clientSatisfaction__bg {
+    width: 600px;
+    height: 450px;
+    background-size: contain;
+  }
+
+  .clientSatisfaction__bg .img_01 {
+    left: 50px;
+    top: 50px;
+    width: 50.5px;
+    height: 50.28px;
+  }
+  .clientSatisfaction__bg .img_02 {
+    left: 65px;
+    top: 227px;
+    width: 83.34px;
+    height: 81.34px;
+  }
+  .clientSatisfaction__bg .img_03 {
+    left: 289px;
+    top: 177px;
+    width: 83.34px;
+    height: 83.28px;
+  }
+  .clientSatisfaction__bg .img_04 {
+    left: 234px;
+    top: 340px;
+    width: 111.41px;
+    height: 109.94px;
+    object-position: 55% 25%;
+  }
+  .clientSatisfaction__bg .img_05 {
+    left: 450px;
+    top: 260px;
+    width: 64.25px;
+    height: 62.59px;
+  }
+  .clientSatisfaction__bg .img_06 {
+    left: 450px;
+    top: 84px;
+    width: 57.28px;
+    height: 56.31px;
+  }
+
+  .arrows {
+    right: 30px;
+  }
+
+  .FAQ_block .first_block {
+    width: 500px;
+  }
+
+  .FAQ_block .second_block {
+    width: 500px;
+  }
+
+  .panel {
+    width: 500px;
+  }
+
+  .downloadApp__left .fs_48 {
+    font-size: 36px;
+  }
+
+  .downloadApp__right {
+    width: 600px;
+    height: 322px;
+    background-size: 600px 322px;
+    margin-bottom: -22px;
+    margin-left: -50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .companies__main-logo li {
+    margin-right: 20px;
+  }
+
+  .arrows {
+    right: 130px;
+  }
+
+  .FAQ_block .first_block {
+    width: 500px;
+    margin: 0;
+  }
+
+  .FAQ_block .second_block {
+    width: 500px;
+    margin: 0;
+  }
+
+  .downloadApp__left {
+    margin-left: 10px;
+  }
+
+  .downloadApp__left .fs_48 {
+    font-size: 36px;
+  }
+
+  .downloadApp__right {
+    width: 600px;
+    height: 322px;
+    background-size: 600px 322px;
+    margin-bottom: -22px;
+    margin-left: -50px;
+  }
+}
