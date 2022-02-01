@@ -1,19 +1,3 @@
-// let myNav = document.querySelector('.header');
-// let scroll = document.getElementById("fixedNav")
-// window.onscroll = function () {
-//   'use strict';
-//   if (
-//     document.body.scrollTop >= 155 ||
-//     document.documentElement.scrollTop >= 155
-//   ) {
-//     myNav.classList.add('fixed_nav');
-//   } else {
-//     myNav.classList.remove('fixed_nav');
-//   }
-// };
-// console.log(window.scrollY)
-
-//use window.scrollY
 let scrollpos = window.scrollY;
 const header = document.querySelector('.header');
 const navMob = document.querySelector('.nav-mobile');
@@ -23,16 +7,13 @@ const backdrop = document.querySelector('.backdrop');
 
 function add_class_on_scroll() {
   header.classList.add('fixed_nav');
-  // navMob.classList.add('fixed_mob');nije bilo potrebno zbog css flexa kad sam resio
 }
 
 function remove_class_on_scroll() {
   header.classList.remove('fixed_nav');
-  // navMob.classList.remove('fixed_mob');nije bilo potrebno zbog css flexa kad sam resio
 }
 
 window.addEventListener('scroll', function () {
-  //Here you forgot to update the value
   scrollpos = window.scrollY;
 
   if (scrollpos >= 90) {
@@ -44,8 +25,6 @@ window.addEventListener('scroll', function () {
 });
 
 function closeModal() {
-  //   backdrop.style.display = "none";
-  //   modal.style.display = "none";
   backdrop.classList.remove('open');
   setTimeout(function () {
     backdrop.style.display = 'none';
@@ -53,14 +32,11 @@ function closeModal() {
 }
 
 backdrop.addEventListener('click', function () {
-  // mobileNav.style.display = 'none';
   mobileNav.classList.remove('open');
   closeModal();
 });
 
 toggleButton.addEventListener('click', function () {
-  // mobileNav.style.display = 'block';
-  // backdrop.style.display = 'block';
   mobileNav.classList.add('open');
   backdrop.style.display = 'block';
   setTimeout(function () {
@@ -144,63 +120,3 @@ gadgetCarousel.each(function () {
     $(this).slick();
   }
 });
-
-// $('.slider').each(function (key, item) {
-//   let sliderIdName = 'slider' + key;
-//   let sliderNavIdName = 'slider2' + key;
-
-//   this.id = sliderIdName;
-//   $('.slider2')[key].id = sliderNavIdName;
-
-//   let sliderId = '#' + sliderIdName;
-//   let sliderNavId = '#' + sliderNavIdName;
-
-//   $(sliderNavId).slick({
-//     slidesToShow: 4,
-//     slidesToScroll: 1,
-//     dots: false,
-//     arrow: false,
-//     autoplay: true,
-//     autoplaSpeed: 2000,
-//     infinite: true,
-//     asNavFor: sliderId,
-//     // centerMode: true,
-
-//   });
-
-//   $(sliderId).slick({
-//     slidesToShow: 4,
-//     slidesToScroll: 1,
-//     dots: false,
-//     arrow: true,
-//     autoplay: true,
-//     autoplaSpeed: 2000,
-//     infinite: true,
-//     asNavFor: sliderNavId,
-//     // centerMode: true,
-//     responsive: [
-//       {
-//         breakpoint: 991,
-//         settings: {
-//           slidesToShow: 3,
-//         },
-//       },
-//       {
-//         breakpoint: 767,
-//         settings: {
-//           slidesToShow: 2,
-//         },
-//       },
-//       {
-//         breakpoint: 575,
-//         settings: {
-//           slidesToShow: 1,
-//         },
-//       },
-//     ],
-//   });
-// });
-
-// var styleElem = document.head.appendChild(document.createElement("style"));
-
-// styleElem.innerHTML = "#theDiv:before {background: black;}";
