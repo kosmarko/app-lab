@@ -28,6 +28,17 @@ body {
 .section_home:target {
   padding-top: 0;
 }
+/* PREPRAVKA */
+/* .dummy {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  top: -65px;
+  left: 0;
+  visibility: hidden;
+} */
 
 .container {
   max-width: 1200px;
@@ -44,6 +55,16 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+/* PREPRAVKA */
+/* .fixed_mob {
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #ffffff;
+} */
 
 .spacing {
   padding: 45px;
@@ -88,11 +109,14 @@ body {
   display: none;
 }
 
+/* vise backrounda imaju stack order prvi ima najveci prioritet */
 .block__1 {
   background: url(../Images/bg1_bestapp.png) no-repeat,
     url(../Images/bg2_bestapp.png) no-repeat,
     url(../Images/bg_bestapp.png) repeat-x;
+  /* background-position: 50% 100%;->center bottom */
   background-position: 29% 20%, 58% 100%, center bottom;
+  /* margin-top: 155px; */
 }
 
 .block__1 .container .bestapp {
@@ -112,6 +136,8 @@ body {
   display: flex;
   flex-direction: row;
   list-style-type: none;
+  /* za mobile verziju */
+  /* padding-left: 0; */
 }
 
 .nav ul a {
@@ -209,8 +235,16 @@ body {
 }
 
 .companies__main-logo li {
-  margin-right: 30px; 
+  margin-right: 30px; /*morao sam da smanjiim zbog slick slajdera*/
 }
+/* SLICK SLAJDER */
+/* centriranje slajdera */
+
+/* kada zelimo da iskljucimo sve strelice */
+/* .slick-prev:before,
+.slick-next:before {
+   display:none;
+} */
 
 .slider div {
   text-align: center;
@@ -733,6 +767,12 @@ body {
   object-position: 70% 5%;
 }
 
+.clientfeedbacks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .clientSatisfaction_right {
   position: relative;
   margin: 124px 0 100px 35px;
@@ -747,7 +787,6 @@ body {
 }
 
 .clientSatisfaction_right__ceo {
-  position: absolute;
   display: flex;
   align-items: center;
   margin-top: 40px;
@@ -795,6 +834,7 @@ body {
   display: flex;
   right: 0;
   margin-right: -30px;
+  margin-top: 280px;
 }
 
 .arrow {
@@ -816,6 +856,11 @@ body {
   background-color: #e7e7e7;
   margin: auto 0;
 }
+/* nije nam potrebno jer je je isto kao u arrow */
+/* .arrow_right {
+  border: solid 1px #dee1e6;
+  background-color: #ffffff;
+} */
 
 .arrow_left:after {
   content: '\27F5';
@@ -1221,11 +1266,17 @@ a {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    /*kada zelimo da animiramo backdrop moramo da dodamo display block unutar js prilikom klika na chose plan, jer 
+    animacija nece da radi kada je display none, inace on mora da se postavi u backdrop jer ako stavimo opaciti 0
+    backdrop ce biti deo DOM samo nece biti vidljiv*/
     opacity: 0;
+    /*kako bi backdrop prilikom zatvaranja modala imao animaciju moramo da unesemo isto vreme 0.2s i u js kod prilikom
+    u funkciji za zatvaranje modala (closeModal())*/
     transition: opacity 0.2s;
   }
 
   .visiable {
+    /*za main nav ne moramo da postavimo opaciti jer zelimo da animacija ide desno levo*/
     transform: translateX(100%);
     position: fixed;
     z-index: 101;
@@ -1240,7 +1291,7 @@ a {
   .nav-mobile {
     width: 90%;
     height: 100%;
-    margin: 0 auto; 
+    margin: 0 auto; /*uklonili smo top i bottom marginu zbog flex*/
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -1270,8 +1321,9 @@ a {
     padding: 0.2rem 0;
   }
 
+  /*kada smo postavili translateY(0) ne moramo da postavimo transalteX jer smo sa Y resetovali oba*/
   .open {
-    display: flex !important; 
+    display: flex !important; /*ostaje kako bi radio backdrop*/
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
@@ -1369,6 +1421,9 @@ a {
     justify-content: center;
   }
 
+  /* .bestapp_h2 {
+    width: 450px;
+  } */
 
   .companies__left {
     display: none;
@@ -1523,8 +1578,13 @@ a {
     margin-right: 20px;
   }
 
+  .clientSatisfaction_right {
+    max-width: 500px;
+    padding-left: 10px;
+  }
+
   .arrows {
-    right: 130px;
+    right: 110px;
   }
 
   .FAQ_block .first_block {
@@ -1551,5 +1611,9 @@ a {
     background-size: 600px 322px;
     margin-bottom: -22px;
     margin-left: -50px;
+  }
+
+  .footer_ul ul {
+    padding-left: 10px;
   }
 }
